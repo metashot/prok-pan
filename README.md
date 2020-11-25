@@ -36,18 +36,20 @@ The files and directories listed below will be created in the `results`
 directory after the pipeline has finished.
 
 ### Main outputs
-TODO
+- `roary`: Roary output files. This folder includes `summary_statistics.txt`
+  (number of genes in the core and accessory), `gene_presence_absence.csv` and
+  the pangenome plots (`pangenome_*.png`).
 
 ### Secondary outputs
-TODO
+- `prokka`: the prokka output for each input sample;
+- `raxml`: RAxML output (when `--skip_core_tree = false`).
 
 ## Documentation
 
-### RAxML
-This mode runs the default RAxML tree search algorithm<sup>[2](#footnote1)</sup>
-and perform multiple searches for the best tree (10 distinct randomized MP trees
-by default, see the parameter `--raxml_nsearch`). The following RAxML parameters
-will be used:
+### Phylogenetic tree
+If `--skip_core_tree = false` the phylogenetic tree is inferred from the core
+genome alignment using te default RaxML tree search
+algorithm<sup>[2](#footnote1)</sup> The following RAxML parameters will be used:
 
 ```bash
 -f d -m GTRCAT -N [RAXML_NSEARCH]
