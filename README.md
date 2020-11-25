@@ -49,7 +49,7 @@ directory after the pipeline has finished.
 ### Phylogenetic tree
 If `--skip_core_tree = false` the phylogenetic tree is inferred from the core
 genome alignment using te default RaxML tree search
-algorithm<sup>[2](#footnote1)</sup> The following RAxML parameters will be used:
+algorithm<sup>[1](#footnote1)</sup> The following RAxML parameters will be used:
 
 ```bash
 -f d -m GTRCAT -N [RAXML_NSEARCH]
