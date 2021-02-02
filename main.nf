@@ -13,9 +13,13 @@ workflow {
         .map { file -> tuple(file.baseName, file) }
         .set { genomes_ch }
 
-    proteins_file = file(params.proteins, type: 'file')
-
-    prokka(genomes_ch, proteins_file)
+    if (params.annotate) {
+        proteins_file = file(params.proteins, type: 'file')
+        prokka(genomes_ch, proteins_file)
+        gff_ch = prokka.out.gff
+    } else {
+        gff_ch = genomes_ch
+    }
 
     gff_collection_ch = prokka.out.gff
         .map { row -> row[1] }

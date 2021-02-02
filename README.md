@@ -7,7 +7,8 @@ prokariotic genomes, mitochondria, and viruses.
 
 ## Main features
 
-- Input: prokaryotic genomes in FASTA format;
+- Input: prokaryotic genomes in FASTA format or annotated genomes in GFF3
+  format;
 - Rapid prokaryotic genome annotation using
   [prokka](https://github.com/tseemann/prokka);
 - Pan genome analysis and visualization using
@@ -41,7 +42,7 @@ directory after the pipeline has finished.
   the pangenome plots (`pangenome_*.png`).
 
 ### Secondary outputs
-- `prokka`: the prokka output for each input sample;
+- `prokka`: the prokka output for each input sample (if `--annotate = true`);
 - `raxml`: RAxML output (when `--skip_core_tree = false`).
 
 ## Documentation
