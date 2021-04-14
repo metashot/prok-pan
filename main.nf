@@ -21,7 +21,7 @@ workflow {
         gff_ch = genomes_ch
     }
 
-    gff_collection_ch = prokka.out.gff
+    gff_collection_ch = gff_ch
         .map { row -> row[1] }
         .collect()
 
