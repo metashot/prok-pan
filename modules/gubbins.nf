@@ -2,11 +2,6 @@ nextflow.enable.dsl=2
 
 process raxml {
     publishDir "${params.outdir}/raxml" , mode: 'copy'
-    publishDir "${params.outdir}" , mode: 'copy' ,
-        saveAs: { filename -> 
-            if (filename == "RAxML_bestTree.run") "tree.tree"
-            else if (filename == "RAxML_bipartitions.run") "tree_support.tree"
-        }
     
     input:
     path(aln)
