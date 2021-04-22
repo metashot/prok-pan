@@ -22,6 +22,8 @@ process roary {
     else {
         param_translation = '-t 11'
     }
+
+    param_dont_split_paralogs = params.dont_split_paralogs ? '-s' : ''
     """
     roary \
         -e -n \
@@ -30,6 +32,7 @@ process roary {
         -f roary \
         -i ${params.min_ident} \
         -cd ${params.min_prev_core} \
+        ${param_dont_split_paralogs} \
         ${gffs}
     """
 }
