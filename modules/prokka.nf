@@ -22,7 +22,8 @@ process prokka {
         --prefix ${id} \
         --kingdom ${params.mode} \
         $param_proteins \
-        --cpus ${task.cpus}
+        --cpus ${task.cpus} \
+        --centre X --compliant
     """
 }
 
